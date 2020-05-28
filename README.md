@@ -57,8 +57,8 @@ AdapterMaker()
     }
 ```
 ## Example
-> `rv` is `RecyclerView`.
-```Kotlin
+> `rv` is `RecyclerView`
+``` Kotlin
 AdapterMaker()
     .setAdapter(
         rv,
@@ -92,3 +92,6 @@ AdapterMaker()
     }
 rv.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 ```
+## Preview
+
+<img alt="preview" src="https://raw.githubusercontent.com/sungbin5304/RecyclerViewAdapterMaker/master/Screenshot_1590685364.png" width="33%"/>

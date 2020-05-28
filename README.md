@@ -30,13 +30,13 @@ AdapterMaker()
     .setAdapter(
         view: RecyclerView,
         swipeController: SwipeController(
-          object : SwipeControllerActions(),
-          buttonWidth: Float = 300f,
-          buttonRadius: Float = 40f,
-          leftButtonColor: Int? = null,
-          rightButtonColor: Int? = null,
-          leftButtonText: String? = null,
-          rightButtonText: String? = null
+            object : SwipeControllerActions(),
+            buttonWidth: Float = 300f,
+            buttonRadius: Float = 40f,
+            leftButtonColor: Int? = null,
+            rightButtonColor: Int? = null,
+            leftButtonText: String? = null,
+            rightButtonText: String? = null
         ),
         option: AdapterMaker.Option(
             AdapterMaker.Divider(
@@ -49,7 +49,7 @@ AdapterMaker()
                 bottom: Int = 0
             )?
         )?,
-        tem: ArrayList<Any>,
+        item: ArrayList<Any>,
         layoutRes: Int
     )
     .setAdapterMakeListener { item, view, position ->

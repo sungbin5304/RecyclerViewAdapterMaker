@@ -92,6 +92,6 @@ AdapterMaker()
     }
 rv.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 ```
-## Preview
+## Preview (when clicked `L` and swipe left)
 
 <img alt="preview" src="https://raw.githubusercontent.com/sungbin5304/RecyclerViewAdapterMaker/master/Screenshot_1590685364.png" width="33%"/>

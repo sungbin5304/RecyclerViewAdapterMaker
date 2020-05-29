@@ -57,45 +57,32 @@ AdapterMaker()
     }
 ```
 ## Example
-> `rv` is `RecyclerView`
+
+<img alt="preview" src="https://raw.githubusercontent.com/sungbin5304/RecyclerViewAdapterMaker/master/Screenshot_1590685364.png" align="right" width="33%"/>
+
 ``` Kotlin
-AdapterMaker()
-    .setAdapter(
-        rv,
-        SwipeController(object : SwipeControllerActions() {
-            override fun onRightClicked(position: Int) {
-                super.onLeftClicked(position)
-                Toast.makeText(applicationContext, "Clicked Right Button.", Toast.LENGTH_LONG).show()
-            }
-            override fun onLeftClicked(position: Int) {
-                super.onRightClicked(position)
-                Toast.makeText(applicationContext, "Clicked Left Button.", Toast.LENGTH_LONG).show()
-            }
-        }, 300f, 40f, Color.BLUE, Color.RED, "LEFT", "RIGHT"),
-        AdapterMaker.Option(
-            AdapterMaker.Divider(
-                LinearLayout.HORIZONTAL
-            ),
-            AdapterMaker.Padding(
-                16, 16, 16, 16
-            )
-        ),
-        arrayListOf("H", "E", "L", "L", "O"),
-        R.layout.test_layout
-    )
-    .setAdapterMakeListener { item, view, position ->
+AdapterHelper
+    .with(rv)
+    .bindLayout(R.layout.test_layout)
+    .addViewBindListener { item, view, position ->
         val tv = view as TextView
         tv.text = item[position].toString()
-        tv.setOnClickListener {
-            Toast.makeText(applicationContext, "${tv.text} Clicked", Toast.LENGTH_LONG).show()
-        }
+        tv.setOnClickListener { toast("${tv.text} Clicked.") }
     }
+    .addOption(Option(null, Padding(16, 16, 16, 16)))
+    .addSwipeListener(SwipeController(object : SwipeControllerActions() {
+        override fun onLeftClicked(items: ArrayList<Any>, position: Int) {
+            super.onLeftClicked(items, position)
+            toast("${items[position]} Left Clicked.")
+        }
+        override fun onRightClicked(items: ArrayList<Any>, position: Int) {
+            super.onRightClicked(items, position)
+            toast("${items[position]} Right Clicked.")
+        }
+    }, 300f, 40f, Color.BLUE, Color.RED, "Left", "Right"))
+    .create(arrayListOf("H", "E", "L", "L", "O"))
 rv.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 ```
-## Preview (when clicked `L` and swipe left)
-
-<img alt="preview" src="https://raw.githubusercontent.com/sungbin5304/RecyclerViewAdapterMaker/master/Screenshot_1590685364.png" width="33%"/>
-
 
 # License
 [Apache License 2.0](https://github.com/sungbin5304/RecyclerViewAdapterMaker/blob/master/LICENSE)

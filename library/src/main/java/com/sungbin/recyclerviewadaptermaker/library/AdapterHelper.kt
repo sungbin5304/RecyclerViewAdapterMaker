@@ -9,9 +9,9 @@ import androidx.annotation.NonNull
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
-import com.sungbin.recyclerviewadaptermaker.library.dto.Divider
-import com.sungbin.recyclerviewadaptermaker.library.dto.Option
-import com.sungbin.recyclerviewadaptermaker.library.dto.Padding
+import com.sungbin.recyclerviewadaptermaker.library.options.Divider
+import com.sungbin.recyclerviewadaptermaker.library.options.Option
+import com.sungbin.recyclerviewadaptermaker.library.options.Padding
 import com.sungbin.recyclerviewadaptermaker.library.swipe.SwipeController
 import kotlin.properties.Delegates
 

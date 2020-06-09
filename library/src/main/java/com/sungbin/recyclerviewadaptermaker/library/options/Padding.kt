@@ -1,4 +1,4 @@
-package com.sungbin.recyclerviewadaptermaker.library.dto
+package com.sungbin.recyclerviewadaptermaker.library.options
 
 
 /**

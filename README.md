@@ -30,7 +30,7 @@ dependencies {
 AdapterHelper
     .with(view: RecyclerView)
     .bindLayout(layoutRes: Int)
-    .create(item: ArrayList<Any>)
+    .create(item: ArrayList<*>)
 ```
 
 ## Binding your view
@@ -56,7 +56,7 @@ AdapterHelper
     //code your action.
   }
 }, buttonWidth: Float = 300f, buttonRadius: Float = 40f, leftButtonColor: Int? = null, rightButtonColor: Int? = null, leftButtonText: String? = null, rightButtonText: String? = null))
-.create(item: ArrayList<Any>)
+.create(item: ArrayList<*>)
 ```
 
 ### Divider(orientation: Int = LinearLayout.VERTICAL)

@@ -9,6 +9,13 @@
 
 -----
 
+# Dirty Project, Don't use this!
+## Project for Practice Programming Skill
+
+
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+
 # Download
 ```Gradle
 repositories {
@@ -39,7 +46,7 @@ AdapterHelper
 .addViewBindListener { item, view, position ->
   //Bind your view. 
 }
-.create(item: ArrayList<Any>)
+.create(item: ArrayList<*>)
 ```
 
 ## Add some options
@@ -47,11 +54,11 @@ AdapterHelper
 ...
 .addOption(Option(divier: Divider?, padding: Padding?)) 
 .addSwipeListener(SwipeController(object : SwipeControllerActions() {
-  override fun onLeftClicked(items: ArrayList<Any>, position: Int) {
+  override fun onLeftClicked(items: ArrayList<*>, position: Int) {
     super.onLeftClicked(items, position)
     //code your action.
   }
-  override fun onRightClicked(items: ArrayList<Any>, position: Int) {
+  override fun onRightClicked(items: ArrayList<*>, position: Int) {
     super.onRightClicked(items, position)
     //code your action.
   }
@@ -77,17 +84,27 @@ AdapterHelper
     }
     .addOption(Option(null, Padding(16, 16, 16, 16)))
     .addSwipeListener(SwipeController(object : SwipeControllerActions() {
-        override fun onLeftClicked(items: ArrayList<Any>, position: Int) {
+        override fun onLeftClicked(items: ArrayList<*>, position: Int) {
             super.onLeftClicked(items, position)
             toast("${items[position]} Left Clicked.")
         }
-        override fun onRightClicked(items: ArrayList<Any>, position: Int) {
+        override fun onRightClicked(items: ArrayList<*>, position: Int) {
             super.onRightClicked(items, position)
             toast("${items[position]} Right Clicked.")
         }
     }, 300f, 40f, Color.BLUE, Color.RED, "Left", "Right"))
     .create(arrayListOf("H", "E", "L", "L", "O"))
 rv.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+```
+
+# Gradle Error
+If you error at gradle `More than one file was found with OS independent path 'META-INF/library_release.kotlin_module'` this, add below code at your gradle.
+```gradle
+android {
+  packagingOptions {
+      exclude 'META-INF/library_release.kotlin_module'
+  }
+}
 ```
 
 # License

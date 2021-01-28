@@ -1,5 +1,8 @@
 <TextView android:layout_height="100dp"
-    android:layout_width="350dp"
+    android:layout_width="match_parent"
     android:gravity="center"
-    android:background="@android:color/holo_orange_light"
+    android:textColor="#fff"
+    android:textStyle="bold"
+    android:textSize="20sp"
+    android:background="#03DAC5"
     xmlns:android="http://schemas.android.com/apk/res/android" />
